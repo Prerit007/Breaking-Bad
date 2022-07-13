@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Header from "./components/ui/Header";
+import Search from "./components/ui/Search";
+import Spinner from "./components/ui/Spinner";
+import Grid from "./components/characters/Grid";
 
-function App() {
+const App = () => {
+  const [item, setItem] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header />
+      <Search />
+      <Spinner />
+      <Grid />
     </div>
   );
-}
+};
 
 export default App;
